@@ -20,10 +20,10 @@ function complete() {
 
 const newQuote = async () => {
     loading();
-    // await getQuotes();
-    // const quote = quotes[0];
-    // quoteText.textContent = quote.quote;
-    // quoteAuthor.textContent = quote.author;
+    await getQuotes();
+    const quote = quotes[0];
+    quoteText.textContent = quote.quote;
+    quoteAuthor.textContent = quote.author;
     complete();
 }
 
