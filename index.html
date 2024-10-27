@@ -1,41 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quote Generator</title>
 
     <!-- Tailwind CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    
-    <!-- FontAwesome CDN for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="flex bg-gray-300 shadow-sm rounded-lg justify-center content-center flex-col p-5" id="quote_container">
-        <!-- Quote Element -->
-        <div class="quote_text">
-            <i class="fas fa-quote-left"></i>
-            <span id="quote">First Quote is the quote by the great </span>
-        </div>
-        <!-- Author -->
-        <div class="quote_author mt-4 flex justify-end mx-2">
-            <span class = "text-lg" id="author">Me</span>
-        </div>
-        <!-- Buttons -->
-        <div class="buttons_container flex justify-around w-full mt-4">
-            <button class="twitter_button text-sm bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" id="twitter" title="Tweet this">
-                <i class="fab fa-twitter"></i> Tweet
-            </button>
-            <button class="next_quote text-sm bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full" id="next" title="Next">
-                Next Quote
-            </button>
-        </div>
+    <!-- FontAwesome CDN for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div
+      class="flex bg-gray-300 shadow-sm rounded-lg justify-center content-center max-w-xl mx-auto md:w-max-lg xl:w-max-xl flex-col p-5"
+      id="quote_container"
+    >
+      <!-- Quote Element -->
+      <div class="quote_text">
+        <i class="fas fa-quote-left"></i>
+        <span id="quote">
+          You make mistakes, but I don't have any regrets. I'm the kind of
+          person who takes responsibility for it and deals with it. I learn from
+          everything I do. I work very hard, I have so many things going on in
+          my life. Get to know me and see who I am.
+        </span>
+      </div>
+      <!-- Author -->
+      <div class="quote_author mt-4 flex justify-end mx-2">
+        <span class="text-lg" id="author">Unknown</span>
+      </div>
+      <!-- Buttons -->
+      <div class="buttons_container flex justify-around w-full mt-4">
+        <button
+          class="twitter_button text-sm bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+          id="twitter"
+          title="Tweet this"
+        >
+          <i class="fab fa-twitter"></i> Tweet
+        </button>
+        <button
+          class="next_quote text-sm bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
+          id="next"
+          title="Next"
+        >
+          Next Quote
+        </button>
+      </div>
     </div>
+
+    <div class="loader" id="loader"></div>
     <script src="config.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

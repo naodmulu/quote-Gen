@@ -1,15 +1,30 @@
-const quoteContainer = document.getElementById("quoteContainer")
-const quoteText = document.getElementById("quote")
-const quoteAuthor = document.getElementById("author")
-const tweetBtn = document.getElementById("twitter")
-const nextBtn = document.getElementById("next")
+const quoteContainer = document.getElementById("quote_container");
+const quoteText = document.getElementById("quote");
+const quoteAuthor = document.getElementById("author");
+const tweetBtn = document.getElementById("twitter");
+const nextBtn = document.getElementById("next");
+const loader = document.getElementById("loader");
 let quotes = [];
+
+// Show loading
+function loading() {
+    loader.style.display = "block";
+    quoteContainer.style.display = "none";
+}
+
+function complete() {
+    quoteContainer.style.display = "block";
+    loader.style.display = "none";
+}
+
+
 const newQuote = async () => {
-    await getQuotes()
-    const quote =  quotes[0]
-    quoteText.textContent =  quote.quote 
-    quoteAuthor.textContent =  quote.author 
-    
+    loading();
+    // await getQuotes();
+    // const quote = quotes[0];
+    // quoteText.textContent = quote.quote;
+    // quoteAuthor.textContent = quote.author;
+    complete();
 }
 
 async function getQuotes() {
@@ -23,7 +38,6 @@ async function getQuotes() {
             }
         });
         quotes = await response.json();
-        console.log("hello", typeof(quotes[0].quote));
     } catch (error) {
         console.error("Error fetching quotes:", error);
     }
@@ -34,7 +48,7 @@ const tweetQuote = () => {
     window.open(twitterURL, '_blank');
 };
 
+tweetBtn.addEventListener('click', tweetQuote);
+nextBtn.addEventListener('click', newQuote);
 
-tweetBtn.addEventListener('click',tweetQuote)
-nextBtn.addEventListener('click',newQuote);
-// newQuote();
+newQuote();
